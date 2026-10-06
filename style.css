@@ -1,6 +1,5 @@
 /* --- CSS VARIABLES & THEMING --- */
 :root {
-    /* Dark Theme (Default) */
     --bg-color: #0a0a0a;
     --surface-color: #171717;
     --text-primary: #ededed;
@@ -13,7 +12,6 @@
 }
 
 [data-theme="light"] {
-    /* Light Theme */
     --bg-color: #ffffff;
     --surface-color: #f4f4f5;
     --text-primary: #18181b;
@@ -164,7 +162,7 @@ ul {
 }
 
 .nav-links {
-    display: none; /* Hidden on mobile */
+    display: none;
     gap: 2rem;
 }
 
@@ -244,7 +242,6 @@ ul {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile Menu */
 .nav-links.active {
     display: flex;
     flex-direction: column;
@@ -267,7 +264,7 @@ ul {
     justify-content: center;
     text-align: center;
     padding: 0 2rem;
-    padding-top: 80px; /* Offset for navbar */
+    padding-top: 80px;
 }
 
 .hero-content {
@@ -536,7 +533,7 @@ footer {
     transform: translateY(0);
 }
 
-/* --- MEDIA QUERIES (TABLET & DESKTOP) --- */
+/* --- MEDIA QUERIES --- */
 @media (min-width: 768px) {
     .nav-links {
         display: flex;
