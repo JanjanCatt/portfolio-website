@@ -1,45 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REPLACE: Update the title and description with your own details -->
     <title>Your Name - Portfolio</title>
+    <meta name="description" content="Professional portfolio of [Your Name], a [Your Profession].">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Your Name</h1>
-        <p>Web Developer & Designer</p>
+    <!-- STICKY NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">YourName.</a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <!-- Moon Icon -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm a passionate developer who loves creating clean and functional websites. I specialize in front-end technologies and enjoy turning ideas into reality.</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-card">
-                <h3>Project One</h3>
-                <p>A brief description of your first project. What did you build and what technologies did you use?</p>
-            </div>
-            <div class="project-card">
-                <h3>Project Two</h3>
-                <p>A brief description of your second project. Highlight the problem it solves and your role.</p>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero fade-in">
+            <div class="hero-content">
+                <!-- REPLACE: Your Name and Profession -->
+                <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+                <h2>Your Profession</h2>
+                <p>I build clean, modern, and highly responsive web experiences. Passionate about turning complex problems into beautiful, intuitive interfaces.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>You can reach me at: <a href="mailto:you@example.com">you@example.com</a></p>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-image">
+                        <!-- REPLACE: Add your own profile picture. You can use a local file (e.g., "images/profile.jpg") or an Unsplash URL -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Profile Picture">
+                    </div>
+                    <div class="about-text">
+                        <p>Hello! I'm a passionate developer based in [Your Location]. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.</p>
+                        <p>My goal is to always build products that provide pixel-perfect, performant experiences. I love the challenge of solving complex problems with elegant code.</p>
+                        <p>When I'm not in front of a computer screen, I'm probably out hiking, reading, or exploring new technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        <h3>HTML5 & CSS3</h3>
+                    </div>
+                    <div class="skill-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        <h3>React & Next.js</h3>
+                    </div>
+                    <div class="skill-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" y1="9" x2="6" y2="21"></line></svg>
+                        <h3>Git & GitHub</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project Card 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 1">
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title 1</h3>
+                            <p>A brief description of what this project does and the technologies used to build it.</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="btn btn-small">Live Demo</a>
+                                <a href="#" target="_blank" class="btn btn-small btn-outline">GitHub Repo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 2">
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title 2</h3>
+                            <p>A brief description of what this project does and the technologies used to build it.</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="btn btn-small">Live Demo</a>
+                                <a href="#" target="_blank" class="btn btn-small btn-outline">GitHub Repo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 3">
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title 3</h3>
+                            <p>A brief description of what this project does and the technologies used to build it.</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="btn btn-small">Live Demo</a>
+                                <a href="#" target="_blank" class="btn btn-small btn-outline">GitHub Repo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 4">
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title 4</h3>
+                            <p>A brief description of what this project does and the technologies used to build it.</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="btn btn-small">Live Demo</a>
+                                <a href="#" target="_blank" class="btn btn-small btn-outline">GitHub Repo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                        <div class="social-links">
+                            <!-- REPLACE: Update these links with your actual profiles -->
+                            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                            <a href="mailto:you@example.com">Email</a>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required placeholder="Hello, I'd like to talk about..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- BACK TO TOP BUTTON -->
+    <button id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>
