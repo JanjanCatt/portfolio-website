@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
     
-    // Check for saved theme in localStorage, default to 'dark'
     const savedTheme = localStorage.getItem('theme') || 'dark';
     htmlElement.setAttribute('data-theme', savedTheme);
 
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('active');
     });
 
-    // Close mobile menu when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -71,26 +69,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 5. CONTACT FORM SUBMISSION ---
+    // --- 5. CONTACT FORM SUBMISSION (D1 DATABASE) ---
     const contactForm = document.getElementById('contact-form');
     
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevent actual form submission
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        // In a real scenario, you would send this data to a backend API or a service like Formspree.
-        // For now, we'll just show a success message.
         const btn = contactForm.querySelector('button[type="submit"]');
         const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
         
-        btn.textContent = 'Message Sent!';
-        btn.style.backgroundColor = '#22c55e'; // Green color
-        btn.style.borderColor = '#22c55e';
-        
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                btn.textContent = 'Message Sent!';
+                btn.style.backgroundColor = '#22c55e'; // Green
+                btn.style.borderColor = '#22c55e';
+                contactForm.reset();
+            } else {
+                throw new Error('Failed to send');
+            }
+        } catch (error) {
+            btn.textContent = 'Error. Try again.';
+            btn.style.backgroundColor = '#ef4444'; // Red
+            btn.style.borderColor = '#ef4444';
+        }
+
         setTimeout(() => {
             btn.textContent = originalText;
             btn.style.backgroundColor = '';
             btn.style.borderColor = '';
-            contactForm.reset();
         }, 3000);
     });
 
